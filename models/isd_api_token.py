@@ -10,8 +10,8 @@ class IsdApiToken(models.Model):
     _description = 'API Token'
 
     token = fields.Char(string='Token', readonly=True, copy=False)
-    expires_date = fields.Date(string='Ngày hết hạn')
-    created_date = fields.Date(string='Ngày tạo', readonly=True)
+    expires_date = fields.Date(string='Expiration Date')
+    created_date = fields.Date(string='Created Date', readonly=True)
 
     @api.constrains('expires_date')
     def _check_expires_date(self):
@@ -21,14 +21,14 @@ class IsdApiToken(models.Model):
             today = date.today()
             max_date = today + timedelta(days=30)
             if record.expires_date < today:
-                raise ValidationError(_('Ngày hết hạn không được là ngày trong quá khứ'))
+                raise ValidationError(_('Expiration date cannot be in the past.'))
             if record.expires_date > max_date:
-                raise ValidationError(_('Ngày hết hạn tối đa là 30 ngày kể từ hôm nay (%s)') % max_date.strftime('%d/%m/%Y'))
+                raise ValidationError(_('Expiration date must be within 30 days from today (%s).') % max_date.strftime('%d/%m/%Y'))
 
     def action_generate_token(self):
         self.ensure_one()
         if not self.expires_date:
-            raise ValidationError(_('Vui lòng chọn ngày hết hạn trước khi tạo token'))
+            raise ValidationError(_('Please select an expiration date before generating a token.'))
         self.write({
             'token': secrets.token_hex(32),
             'created_date': fields.Date.today(),
@@ -36,7 +36,7 @@ class IsdApiToken(models.Model):
 
     @api.model
     def get_or_create_singleton(self):
-        """Lấy record duy nhất hoặc tạo mới nếu chưa có"""
+        """Get the singleton record, or create one if none exists."""
         record = self.search([], limit=1)
         if not record:
             record = self.create({})

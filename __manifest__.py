@@ -2,7 +2,7 @@
     'name': 'ISD Layout Builder',
     'version': '18.0.1.0.0',
     'category': 'ISD Modules',
-    'summary': 'Tạo và quản lý bố cục mặc định cho photo booth',
+    'summary': 'Create and manage default layouts for photo booth',
     'depends': ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',

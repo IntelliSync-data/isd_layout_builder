@@ -12,10 +12,10 @@ class IsdLayoutSystem(models.Model):
         required=True,
         ondelete='cascade',
     )
-    no = fields.Integer(string='STT')
+    no = fields.Integer(string='No.')
     frame_type = fields.Selection(
-        selection=[('image', 'Ảnh'), ('qr', 'QR')],
-        string='Loại',
+        selection=[('image', 'Image'), ('qr', 'QR')],
+        string='Type',
         default='image',
     )
     name = fields.Char(

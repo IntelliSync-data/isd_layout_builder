@@ -11,7 +11,7 @@
     <!-- Sub-menu -->
     <menuitem
         id="menu_isd_layout_type"
-        name="Bố cục mặc định"
+        name="Default Layouts"
         parent="menu_isd_layout_builder_root"
         action="isd_layout_builder.action_isd_layout_type"
         sequence="10"

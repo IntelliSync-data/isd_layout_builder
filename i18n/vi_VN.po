@@ -1,0 +1,358 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* isd_layout_builder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 00:00+0000\n"
+"PO-Revision-Date: 2026-08-24 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Vietnamese\n"
+"Language: vi_VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: isd_layout_builder
+#: model:ir.model,name:isd_layout_builder.model_isd_layout_type
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__layout_type_id
+msgid "Layout Type"
+msgstr "Loại bố cục"
+
+#. module: isd_layout_builder
+#: model:ir.model,name:isd_layout_builder.model_isd_layout_system
+msgid "Layout System Frame"
+msgstr "Khung bố cục"
+
+#. module: isd_layout_builder
+#: model:ir.model,name:isd_layout_builder.model_isd_api_token
+msgid "API Token"
+msgstr "API Token"
+
+#. module: isd_layout_builder
+#: model:ir.ui.menu,name:isd_layout_builder.menu_isd_layout_builder_root
+msgid "Layout Builder"
+msgstr "Trình tạo bố cục"
+
+#. module: isd_layout_builder
+#: model:ir.ui.menu,name:isd_layout_builder.menu_isd_layout_type
+#: model:ir.actions.act_window,name:isd_layout_builder.action_isd_layout_type
+msgid "Default Layouts"
+msgstr "Bố cục mặc định"
+
+#. module: isd_layout_builder
+#: model:ir.ui.menu,name:isd_layout_builder.menu_isd_api_token
+msgid "API Documentation"
+msgstr "Tài liệu API"
+
+#. module: isd_layout_builder
+#: model:ir.actions.server,name:isd_layout_builder.action_isd_api_token_open
+msgid "Open API Token Config"
+msgstr "Mở cấu hình API Token"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__view_box_width
+msgid "ViewBox Width"
+msgstr "Chiều rộng ViewBox"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__view_box_height
+msgid "ViewBox Height"
+msgstr "Chiều cao ViewBox"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__frame_count
+msgid "Number of Image Frames"
+msgstr "Số lượng khung ảnh"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__dpi
+msgid "DPI"
+msgstr "DPI"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_width
+msgid "Print Width (mm)"
+msgstr "Chiều rộng in (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_height
+msgid "Print Height (mm)"
+msgstr "Chiều cao in (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__actual_width
+msgid "Actual Width (mm)"
+msgstr "Chiều rộng thực (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__actual_height
+msgid "Actual Height (mm)"
+msgstr "Chiều cao thực (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__is_cutted
+msgid "Is Cutted"
+msgstr "Có cắt"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__is_landscape
+msgid "Is Landscape"
+msgstr "Ngang"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_top
+msgid "Print Top (mm)"
+msgstr "Lề trên (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_left
+msgid "Print Left (mm)"
+msgstr "Lề trái (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_bottom
+msgid "Print Bottom (mm)"
+msgstr "Lề dưới (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__print_right
+msgid "Print Right (mm)"
+msgstr "Lề phải (mm)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__system_ids
+msgid "Layout Systems"
+msgstr "Danh sách khung"
+
+#. module: isd_layout_builder
+#: model:isd.layout.type,field_description:isd_layout_builder.field_isd_layout_type__preview_html
+msgid "Preview"
+msgstr "Xem trước"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__no
+msgid "No."
+msgstr "STT"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__frame_type
+msgid "Type"
+msgstr "Loại"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,selection:isd_layout_builder.field_isd_layout_system__frame_type
+msgid "Image"
+msgstr "Ảnh"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,selection:isd_layout_builder.field_isd_layout_system__frame_type
+msgid "QR"
+msgstr "QR"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__is_qr
+msgid "Is QR"
+msgstr "Là QR"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__x
+msgid "Left (X)"
+msgstr "Trái (X)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__y
+msgid "Top (Y)"
+msgstr "Trên (Y)"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__width
+msgid "Width"
+msgstr "Chiều rộng"
+
+#. module: isd_layout_builder
+#: model:isd.layout.system,field_description:isd_layout_builder.field_isd_layout_system__height
+msgid "Height"
+msgstr "Chiều cao"
+
+#. module: isd_layout_builder
+#: model:isd.api.token,field_description:isd_layout_builder.field_isd_api_token__token
+msgid "Token"
+msgstr "Token"
+
+#. module: isd_layout_builder
+#: model:isd.api.token,field_description:isd_layout_builder.field_isd_api_token__expires_date
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Expiration Date"
+msgstr "Ngày hết hạn"
+
+#. module: isd_layout_builder
+#: model:isd.api.token,field_description:isd_layout_builder.field_isd_api_token__created_date
+msgid "Created Date"
+msgstr "Ngày tạo"
+
+#. module: isd_layout_builder
+#: code:addons/isd_layout_builder/models/isd_api_token.py:0
+#, python-format
+msgid "Expiration date cannot be in the past."
+msgstr "Ngày hết hạn không được là ngày trong quá khứ."
+
+#. module: isd_layout_builder
+#: code:addons/isd_layout_builder/models/isd_api_token.py:0
+#, python-format
+msgid "Expiration date must be within 30 days from today (%s)."
+msgstr "Ngày hết hạn tối đa là 30 ngày kể từ hôm nay (%s)."
+
+#. module: isd_layout_builder
+#: code:addons/isd_layout_builder/models/isd_api_token.py:0
+#, python-format
+msgid "Please select an expiration date before generating a token."
+msgstr "Vui lòng chọn ngày hết hạn trước khi tạo token."
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Initialize Frames"
+msgstr "Tạo danh sách khung"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Download PNG"
+msgstr "Tải PNG"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Print Dimensions (mm)"
+msgstr "Kích thước in (mm)"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Print Margins (mm)"
+msgstr "Lề in (mm)"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_layout_type_form
+msgid "Frame List"
+msgstr "Danh sách khung"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Generate Token"
+msgstr "Tạo Token"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "(max 30 days)"
+msgstr "(tối đa 30 ngày)"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Select expiration date (max 30 days)"
+msgstr "Chọn ngày hết hạn (tối đa 30 ngày)"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Created:"
+msgstr "Ngày tạo:"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Expires:"
+msgstr "Hết hạn:"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Select an expiration date then click"
+msgstr "Chọn ngày hết hạn rồi nhấn"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "to create a new token."
+msgstr "để tạo token mới."
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "API Usage Guide"
+msgstr "Hướng dẫn sử dụng API"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Authentication"
+msgstr "Xác thực"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Pass token via"
+msgstr "Truyền token qua"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Endpoints"
+msgstr "Endpoints"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Method"
+msgstr "Phương thức"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Endpoint"
+msgstr "Endpoint"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "List all layouts"
+msgstr "Danh sách tất cả bố cục"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Get layout details"
+msgstr "Chi tiết bố cục"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Create new layout"
+msgstr "Tạo bố cục mới"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Update layout"
+msgstr "Cập nhật bố cục"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Delete layout"
+msgstr "Xóa bố cục"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "POST / PUT body"
+msgstr "Nội dung POST / PUT"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "Response format"
+msgstr "Định dạng phản hồi"
+
+#. module: isd_layout_builder
+#: model_terms:ir.ui.view,arch_db:isd_layout_builder.view_isd_api_token_form
+msgid "cURL Examples"
+msgstr "Ví dụ cURL"

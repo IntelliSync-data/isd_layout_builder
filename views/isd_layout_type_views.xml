@@ -10,7 +10,7 @@
                 <header>
                     <button
                         name="action_init_systems"
-                        string="Tạo danh sách khung"
+                        string="Initialize Frames"
                         type="object"
                         class="btn-primary"
                     />
@@ -29,7 +29,7 @@
                     </div>
 
                     <!-- Basic configuration -->
-                    <group string="Cấu hình">
+                    <group string="Configuration">
                         <group>
                             <field name="view_box_width"/>
                             <field name="view_box_height"/>
@@ -38,7 +38,7 @@
                     </group>
 
                     <!-- Computed print dimensions -->
-                    <group string="Kích thước in (mm)">
+                    <group string="Print Dimensions (mm)">
                         <group>
                             <field name="print_width" readonly="1"/>
                             <field name="print_height" readonly="1"/>
@@ -53,7 +53,7 @@
                     </group>
 
                     <!-- Computed margins -->
-                    <group string="Lề in (mm)">
+                    <group string="Print Margins (mm)">
                         <group>
                             <field name="print_top" readonly="1"/>
                             <field name="print_left" readonly="1"/>
@@ -66,11 +66,11 @@
 
                     <!-- Frames -->
                     <notebook>
-                        <page string="Danh sách khung" name="systems">
+                        <page string="Frame List" name="systems">
                             <field name="system_ids">
                                 <list editable="bottom" multi_edit="1">
-                                    <field name="no" string="STT"/>
-                                    <field name="frame_type" string="Loại"/>
+                                    <field name="no" string="No."/>
+                                    <field name="frame_type" string="Type"/>
                                     <field name="y" string="Top (Y)"/>
                                     <field name="x" string="Left (X)"/>
                                     <field name="width" string="Width"/>
@@ -109,7 +109,7 @@
 
     <!-- Action -->
     <record id="action_isd_layout_type" model="ir.actions.act_window">
-        <field name="name">Bố cục mặc định</field>
+        <field name="name">Default Layouts</field>
         <field name="res_model">isd.layout.type</field>
         <field name="view_mode">list,form</field>
         <field name="view_ids" eval="[

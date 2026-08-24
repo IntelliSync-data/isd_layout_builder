@@ -16,8 +16,8 @@
                                 <h2>API Token</h2>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
-                                        <span class="o_form_label fw-bold">Ngày hết hạn <span class="text-muted">(tối đa 30 ngày)</span></span>
-                                        <field name="expires_date" widget="date" class="d-block mt-1" placeholder="Chọn ngày hết hạn (tối đa 30 ngày)"/>
+                                        <span class="o_form_label fw-bold">Expiration Date <span class="text-muted">(max 30 days)</span></span>
+                                        <field name="expires_date" widget="date" class="d-block mt-1" placeholder="Select expiration date (max 30 days)"/>
                                     </div>
                                     <div class="col-md-6 d-flex align-items-end">
                                         <button name="action_generate_token"
@@ -34,13 +34,13 @@
                                         <field name="token" readonly="1" class="font-monospace w-100 bg-light p-2 border rounded"/>
                                     </div>
                                     <small class="text-muted">
-                                        Ngày tạo: <field name="created_date" readonly="1" class="d-inline"/>
-                                        — Hết hạn: <field name="expires_date" readonly="1" class="d-inline"/>
+                                        Created: <field name="created_date" readonly="1" class="d-inline"/>
+                                        — Expires: <field name="expires_date" readonly="1" class="d-inline"/>
                                     </small>
                                 </div>
 
                                 <div class="alert alert-warning mt-3" invisible="token">
-                                    <i class="fa fa-info-circle"/> Chọn ngày hết hạn rồi nhấn <strong>Generate Token</strong> để tạo token mới.
+                                    <i class="fa fa-info-circle"/> Select an expiration date then click <strong>Generate Token</strong> to create a new token.
                                 </div>
                             </div>
                         </div>
@@ -50,13 +50,13 @@
                         <!-- API Documentation Section -->
                         <div class="o_setting_box">
                             <div class="o_setting_right_pane w-100">
-                                <h2>Hướng dẫn sử dụng API</h2>
+                                <h2>API Usage Guide</h2>
 
                                 <div class="mt-3">
                                     <h5>Authentication</h5>
-                                    <p>Truyền token qua <strong>Authorization header</strong> hoặc <strong>query param</strong>:</p>
+                                    <p>Pass token via <strong>Authorization header</strong> or <strong>query param</strong>:</p>
                                     <pre class="bg-light p-2 rounded">Authorization: Bearer &lt;token&gt;
-# hoặc
+# or
 ?token=&lt;token&gt;</pre>
                                 </div>
 
@@ -67,34 +67,34 @@
                                             <tr>
                                                 <th>Method</th>
                                                 <th>Endpoint</th>
-                                                <th>Mô tả</th>
+                                                <th>Description</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td><span class="badge bg-success">GET</span></td>
                                                 <td><code>/api/layout/types</code></td>
-                                                <td>Danh sách tất cả layout</td>
+                                                <td>List all layouts</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="badge bg-success">GET</span></td>
                                                 <td><code>/api/layout/types/&lt;id&gt;</code></td>
-                                                <td>Chi tiết 1 layout</td>
+                                                <td>Get layout details</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="badge bg-primary">POST</span></td>
                                                 <td><code>/api/layout/types</code></td>
-                                                <td>Tạo layout mới</td>
+                                                <td>Create new layout</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="badge bg-warning text-dark">PUT</span></td>
                                                 <td><code>/api/layout/types/&lt;id&gt;</code></td>
-                                                <td>Cập nhật layout</td>
+                                                <td>Update layout</td>
                                             </tr>
                                             <tr>
                                                 <td><span class="badge bg-danger">DELETE</span></td>
                                                 <td><code>/api/layout/types/&lt;id&gt;</code></td>
-                                                <td>Xóa layout</td>
+                                                <td>Delete layout</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -116,18 +116,18 @@
 
                                 <div class="mt-4">
                                     <h5>Response format</h5>
-                                    <pre class="bg-light p-2 rounded">// Thành công (list)
+                                    <pre class="bg-light p-2 rounded">// Success (list)
 { "success": true, "total": 5, "data": [...] }
 
-// Thành công (item)
+// Success (item)
 { "success": true, "data": { "id": 1, "name": "...", "systems": [...] } }
 
-// Lỗi
+// Error
 { "success": false, "error": "...", "error_code": "..." }</pre>
                                 </div>
 
                                 <div class="mt-4">
-                                    <h5>Ví dụ cURL</h5>
+                                    <h5>cURL Examples</h5>
                                     <pre class="bg-light p-2 rounded">curl -X GET https://workplace.intellisyncdata.com/api/layout/types \
   -H "Authorization: Bearer &lt;token&gt;"
 
@@ -146,7 +146,7 @@ curl -X POST https://workplace.intellisyncdata.com/api/layout/types \
         </field>
     </record>
 
-    <!-- List view override để xóa cache cũ có field name -->
+    <!-- List View -->
     <record id="view_isd_api_token_list" model="ir.ui.view">
         <field name="name">isd.api.token.list</field>
         <field name="model">isd.api.token</field>
@@ -159,7 +159,7 @@ curl -X POST https://workplace.intellisyncdata.com/api/layout/types \
         </field>
     </record>
 
-    <!-- Action - mở thẳng form, không qua list -->
+    <!-- Action - open form directly -->
     <record id="action_isd_api_token" model="ir.actions.act_window">
         <field name="name">API Documentation</field>
         <field name="res_model">isd.api.token</field>
@@ -167,7 +167,7 @@ curl -X POST https://workplace.intellisyncdata.com/api/layout/types \
         <field name="target">current</field>
     </record>
 
-    <!-- Server action để redirect đến singleton record -->
+    <!-- Server action to redirect to singleton record -->
     <record id="action_isd_api_token_open" model="ir.actions.server">
         <field name="name">Open API Token Config</field>
         <field name="model_id" ref="model_isd_api_token"/>
