@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top-level menu -->
+    <menuitem
+        id="menu_isd_layout_builder_root"
+        name="Layout Builder"
+        sequence="100"
+    />
+
+    <!-- Sub-menu -->
+    <menuitem
+        id="menu_isd_layout_type"
+        name="Bố cục mặc định"
+        parent="menu_isd_layout_builder_root"
+        action="isd_layout_builder.action_isd_layout_type"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_isd_api_token"
+        name="API Documentation"
+        parent="menu_isd_layout_builder_root"
+        action="isd_layout_builder.action_isd_api_token_open"
+        sequence="20"
+    />
+
+</odoo>

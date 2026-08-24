@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_isd_api_token_form" model="ir.ui.view">
+        <field name="name">isd.api.token.form</field>
+        <field name="model">isd.api.token</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="o_setting_container">
+
+                        <!-- Token Config Section -->
+                        <div class="o_setting_box mb-4">
+                            <div class="o_setting_right_pane w-100">
+                                <h2>API Token</h2>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <span class="o_form_label fw-bold">Ngày hết hạn <span class="text-muted">(tối đa 30 ngày)</span></span>
+                                        <field name="expires_date" widget="date" class="d-block mt-1" placeholder="Chọn ngày hết hạn (tối đa 30 ngày)"/>
+                                    </div>
+                                    <div class="col-md-6 d-flex align-items-end">
+                                        <button name="action_generate_token"
+                                                string="Generate Token"
+                                                type="object"
+                                                class="btn btn-primary"
+                                                icon="fa-key"/>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3" invisible="not token">
+                                    <span class="o_form_label fw-bold">Token</span>
+                                    <div class="d-flex align-items-center gap-2 mt-1">
+                                        <field name="token" readonly="1" class="font-monospace w-100 bg-light p-2 border rounded"/>
+                                    </div>
+                                    <small class="text-muted">
+                                        Ngày tạo: <field name="created_date" readonly="1" class="d-inline"/>
+                                        — Hết hạn: <field name="expires_date" readonly="1" class="d-inline"/>
+                                    </small>
+                                </div>
+
+                                <div class="alert alert-warning mt-3" invisible="token">
+                                    <i class="fa fa-info-circle"/> Chọn ngày hết hạn rồi nhấn <strong>Generate Token</strong> để tạo token mới.
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <!-- API Documentation Section -->
+                        <div class="o_setting_box">
+                            <div class="o_setting_right_pane w-100">
+                                <h2>Hướng dẫn sử dụng API</h2>
+
+                                <div class="mt-3">
+                                    <h5>Authentication</h5>
+                                    <p>Truyền token qua <strong>Authorization header</strong> hoặc <strong>query param</strong>:</p>
+                                    <pre class="bg-light p-2 rounded">Authorization: Bearer &lt;token&gt;
+# hoặc
+?token=&lt;token&gt;</pre>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h5>Endpoints</h5>
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Endpoint</th>
+                                                <th>Mô tả</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="badge bg-success">GET</span></td>
+                                                <td><code>/api/layout/types</code></td>
+                                                <td>Danh sách tất cả layout</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-success">GET</span></td>
+                                                <td><code>/api/layout/types/&lt;id&gt;</code></td>
+                                                <td>Chi tiết 1 layout</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-primary">POST</span></td>
+                                                <td><code>/api/layout/types</code></td>
+                                                <td>Tạo layout mới</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-warning text-dark">PUT</span></td>
+                                                <td><code>/api/layout/types/&lt;id&gt;</code></td>
+                                                <td>Cập nhật layout</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-danger">DELETE</span></td>
+                                                <td><code>/api/layout/types/&lt;id&gt;</code></td>
+                                                <td>Xóa layout</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h5>POST / PUT body</h5>
+                                    <pre class="bg-light p-2 rounded">{
+  "name": "Layout 4x6",
+  "view_box_width": "289.13",
+  "view_box_height": "192.75",
+  "frame_count": 2
+}</pre>
+                                    <p class="text-muted mt-1">
+                                        <strong>view_box_width:</strong> <code>144.57</code> | <code>289.13</code> | <code>430.87</code><br/>
+                                        <strong>view_box_height:</strong> <code>96.38</code> | <code>192.75</code> | <code>289.13</code>
+                                    </p>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h5>Response format</h5>
+                                    <pre class="bg-light p-2 rounded">// Thành công (list)
+{ "success": true, "total": 5, "data": [...] }
+
+// Thành công (item)
+{ "success": true, "data": { "id": 1, "name": "...", "systems": [...] } }
+
+// Lỗi
+{ "success": false, "error": "...", "error_code": "..." }</pre>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h5>Ví dụ cURL</h5>
+                                    <pre class="bg-light p-2 rounded">curl -X GET https://workplace.intellisyncdata.com/api/layout/types \
+  -H "Authorization: Bearer &lt;token&gt;"
+
+curl -X POST https://workplace.intellisyncdata.com/api/layout/types \
+  -H "Authorization: Bearer &lt;token&gt;" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Layout 4x6", "view_box_width": "289.13", "view_box_height": "192.75", "frame_count": 2}'</pre>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view override để xóa cache cũ có field name -->
+    <record id="view_isd_api_token_list" model="ir.ui.view">
+        <field name="name">isd.api.token.list</field>
+        <field name="model">isd.api.token</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="token"/>
+                <field name="expires_date"/>
+                <field name="created_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action - mở thẳng form, không qua list -->
+    <record id="action_isd_api_token" model="ir.actions.act_window">
+        <field name="name">API Documentation</field>
+        <field name="res_model">isd.api.token</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- Server action để redirect đến singleton record -->
+    <record id="action_isd_api_token_open" model="ir.actions.server">
+        <field name="name">Open API Token Config</field>
+        <field name="model_id" ref="model_isd_api_token"/>
+        <field name="state">code</field>
+        <field name="code">
+record = env['isd.api.token'].get_or_create_singleton()
+action = {
+    'type': 'ir.actions.act_window',
+    'res_model': 'isd.api.token',
+    'view_mode': 'form',
+    'res_id': record.id,
+    'target': 'current',
+}
+        </field>
+    </record>
+
+</odoo>

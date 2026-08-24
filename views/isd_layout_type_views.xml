@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_isd_layout_type_form" model="ir.ui.view">
+        <field name="name">isd.layout.type.form</field>
+        <field name="model">isd.layout.type</field>
+        <field name="arch" type="xml">
+            <form string="Layout Type">
+                <header>
+                    <button
+                        name="action_init_systems"
+                        string="Tạo danh sách khung"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="action_download_png"
+                        string="Download PNG"
+                        type="object"
+                        class="btn-secondary"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Layout name..."/>
+                        </h1>
+                    </div>
+
+                    <!-- Basic configuration -->
+                    <group string="Cấu hình">
+                        <group>
+                            <field name="view_box_width"/>
+                            <field name="view_box_height"/>
+                            <field name="frame_count"/>
+                        </group>
+                    </group>
+
+                    <!-- Computed print dimensions -->
+                    <group string="Kích thước in (mm)">
+                        <group>
+                            <field name="print_width" readonly="1"/>
+                            <field name="print_height" readonly="1"/>
+                            <field name="actual_width" readonly="1"/>
+                            <field name="actual_height" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="is_cutted" readonly="1"/>
+                            <field name="is_landscape" readonly="1"/>
+                            <field name="dpi" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Computed margins -->
+                    <group string="Lề in (mm)">
+                        <group>
+                            <field name="print_top" readonly="1"/>
+                            <field name="print_left" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="print_bottom" readonly="1"/>
+                            <field name="print_right" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Frames -->
+                    <notebook>
+                        <page string="Danh sách khung" name="systems">
+                            <field name="system_ids">
+                                <list editable="bottom" multi_edit="1">
+                                    <field name="no" string="STT"/>
+                                    <field name="frame_type" string="Loại"/>
+                                    <field name="y" string="Top (Y)"/>
+                                    <field name="x" string="Left (X)"/>
+                                    <field name="width" string="Width"/>
+                                    <field name="height" string="Height"/>
+                                    <field name="name" optional="hide"/>
+                                    <field name="is_qr" optional="hide"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <!-- SVG Preview -->
+                    <separator string="Preview"/>
+                    <field name="preview_html" widget="html" nolabel="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_isd_layout_type_list" model="ir.ui.view">
+        <field name="name">isd.layout.type.list</field>
+        <field name="model">isd.layout.type</field>
+        <field name="arch" type="xml">
+            <list string="Layout Types">
+                <field name="name"/>
+                <field name="view_box_width"/>
+                <field name="view_box_height"/>
+                <field name="print_width"/>
+                <field name="print_height"/>
+                <field name="is_landscape"/>
+                <field name="is_cutted"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_isd_layout_type" model="ir.actions.act_window">
+        <field name="name">Bố cục mặc định</field>
+        <field name="res_model">isd.layout.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_isd_layout_type_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_isd_layout_type_form')}),
+        ]"/>
+    </record>
+
+</odoo>

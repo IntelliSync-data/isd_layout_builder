@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_isd_layout_type_user,isd.layout.type user,model_isd_layout_type,,1,1,1,1
+access_isd_layout_system_user,isd.layout.system user,model_isd_layout_system,,1,1,1,1
+access_isd_api_token_user,isd.api.token user,model_isd_api_token,,1,1,1,1
